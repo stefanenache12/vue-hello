@@ -23,16 +23,41 @@
         
         <link rel="stylesheet" href="css/style.css">
 
+        <!--VUE JS-->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
         <!--TITLE-->
 
-        <title>Document</title>
+        <title>HELLO VUE</title>
 
     </head>
 
     <!--BODY-->
 
-    <body>
+    <body class="bg-secondary">
         
+        <div id="app" class="w-50 m-auto d-flex flex-column text-center">  
+
+           <h1 class="p-5 text-light"> {{ message }}  </h1> 
+
+            <img :src="imgUrl" alt="Hello Vue">
+
+        </div>
+
+        <script>
+            const { createApp } = Vue
+            
+            createApp({
+                data() {
+                    return {
+                        message: 'Hello Vue!',
+                        imgUrl :'https://img.freepik.com/free-vector/hello-wording-comic-speech-bubble-pop-art-style_1150-39959.jpg?w=996&t=st=1688141107~exp=1688141707~hmac=f86e9707b4b330b411cb234a657cc27700358f0c1c318acef5286f75fdbdd4ff'
+                    }
+                }
+            }).mount('#app')
+        </script>
+
+
 
         <!--JS BOOTSTRAP-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
